@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'dashboard', to: 'dashboard#index', as: :dashboard
     resources :users  # Ensure this is here for user management
+    get 'users/:id/edit_user', to: 'dashboard#edit_user', as: :edit_user
+    patch 'users/:id/update_user', to: 'dashboard#update_user', as: :update_user
+    delete 'users/:id/destroy_user', to: 'dashboard#destroy_user', as: :destroy_user
   end
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
